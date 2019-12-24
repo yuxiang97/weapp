@@ -1,0 +1,32 @@
+.weui-cell {
+    margin-top: 30rpx;
+    display: flex;
+    height: 100rpx;
+}
+
+.img{
+   width: 100%;
+}
+
+.weui-input {
+    border: 1rpx solid #000;
+    width: 70%;
+    height: 98rpx;
+}
+
+.Todo-list {
+    border-bottom: 1rpx solid #999;
+    padding: 10rpx 20rpx;
+}
+
+button[size='mini'] {
+    width: 30%;
+    background: #eee;
+    border-radius: 0;
+    line-height: 100rpx;
+}
+
+.next {
+    width: 60rpx;
+    margin-top: 40rpx;
+}
