@@ -24,8 +24,8 @@
         <button bindtap="getVal" size="mini">点击</button>
     </view>
     <view class="Todo-list" wx:for="{{list}}" wx:key="*this">
-        <navigator url="../logs/logs?objectId=123" class="text">
-            {{index +1 }}:{{item}}
+        <navigator url="../logs/logs?objectId={{item.id}}" class="text">
+            {{index +1 }}: {{item.title}}
         </navigator>
     </view>
     <button bindtap="setDisabled" class="next">下一页</button>

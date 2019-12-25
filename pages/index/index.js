@@ -1,3 +1,5 @@
+import { apiBaseUrl } from '../../config.js'
+
 Page({
   data: {
     img: [
@@ -5,21 +7,30 @@ Page({
     'http://img1.imgtn.bdimg.com/it/u=1734073965,524448280&fm=26&gp=0.jpg',
     'http://attach.bbs.miui.com/forum/201111/21/205700txzuacubbcy91u99.jpg'
     ],
-    list:[
-     '代办事项',
-     '代办事项1',
-     '代办事项2',
-     '代办事项3',
-     '代办事项4',
-     '代办事项5',
-     '代办事项6',
-    ],
+    list:[],
     indicatorDots: true,
     vertical: true,
     autoplay: true,
     interval: 2000,
     duration: 500,
     itemVal: ''
+  },
+  onLoad() {
+    const self = this
+    /*
+    * https
+    * http://localhost:3000
+    * */
+    wx.request({
+      url: `${apiBaseUrl}/articles`,
+      method: 'GET',
+      success(res){
+        self.setData({
+          list: res.data
+        })
+        // console.log(res.data)
+      }
+    })
   },
   getVal() {
     const self = this
