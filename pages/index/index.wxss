@@ -16,7 +16,11 @@
 
 .Todo-list {
     border-bottom: 1rpx solid #999;
-    padding: 10rpx 20rpx;
+    padding: 20rpx 20rpx;
+}
+
+.text {
+    line-height: 70rpx;
 }
 
 button[size='mini'] {

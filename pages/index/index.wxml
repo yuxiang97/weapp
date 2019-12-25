@@ -18,9 +18,9 @@
         <button bindtap="setDisabled" size="mini">点击</button>
     </view>
     <view class="Todo-list" wx:for="{{text}}" wx:key="*this">
-        <text >
+        <navigator url="../logs/logs" class="text">
             {{index +1 }}:{{item}}
-        </text>
+        </navigator>
     </view>
     <button bindtap="setDisabled" class="next">下一页</button>
 </view>
