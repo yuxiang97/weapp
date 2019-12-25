@@ -5,7 +5,7 @@ Page({
     'http://img1.imgtn.bdimg.com/it/u=1734073965,524448280&fm=26&gp=0.jpg',
     'http://attach.bbs.miui.com/forum/201111/21/205700txzuacubbcy91u99.jpg'
     ],
-    text:[
+    list:[
      '代办事项',
      '代办事项1',
      '代办事项2',
@@ -18,6 +18,36 @@ Page({
     vertical: true,
     autoplay: true,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    itemVal: ''
   },
+  getVal() {
+    const self = this
+    if (self.data.itemVal) {
+      // console.log(this.data.itemVal)
+      wx.showModal({
+        title: '提示',
+        content: this.data.itemVal,
+        success (res) {
+          if (res.confirm) {
+            self.setData({
+              itemVal: ''
+            })
+          }
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '不能为空！！！',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+  },
+  onInputChange(e) {
+    // this.data.itemVal = e.detail.value
+    this.setData({
+      itemVal: e.detail.value
+    })
+  }
 })

@@ -14,11 +14,17 @@
         </swiper>
     </view>
     <view class="weui-cell">
-        <input class="weui-input" auto-focus placeholder="请输入标题"/>
-        <button bindtap="setDisabled" size="mini">点击</button>
+        <input
+          class="weui-input"
+          auto-focus
+          placeholder="请输入标题"
+          value="{{itemVal}}"
+          bindinput="onInputChange"
+        />
+        <button bindtap="getVal" size="mini">点击</button>
     </view>
-    <view class="Todo-list" wx:for="{{text}}" wx:key="*this">
-        <navigator url="../logs/logs" class="text">
+    <view class="Todo-list" wx:for="{{list}}" wx:key="*this">
+        <navigator url="../logs/logs?objectId=123" class="text">
             {{index +1 }}:{{item}}
         </navigator>
     </view>
