@@ -2,15 +2,15 @@
   <text class="title">详情页</text>
   <view class="weui-cell weui-cell_input">
     <view wx:if="{{ !isEdit }}">{{ article.title }}</view>
-    <input wx:else value="{{article.title}}" class="weui-input" maxlength="10" placeholder="输入标题" />
+    <input wx:else bindinput="onInputChange" id="title" data-type="title" value="{{article.title}}" class="weui-input" maxlength="10" placeholder="输入标题" />
   </view>
   <view class="weui-cell weui-cell_input">
     <view wx:if="{{ !isEdit }}">{{ article.description }}</view>
-    <input wx:else value="{{article.description}}" class="weui-input" maxlength="20" placeholder="输入描述" />
+    <input wx:else bindinput="onInputChange" id="description" data-type="description" value="{{article.description}}" class="weui-input" maxlength="20" placeholder="输入描述" />
   </view>
   <view>
     <view wx:if="{{ !isEdit }}">{{ article.detail }}</view>
-    <textarea wx:else value="{{article.detail}}" class="weui-input" placeholder="输入详情" />
+    <textarea wx:else bindinput="onInputChange" id="detail" data-type="detail" value="{{article.detail}}" class="weui-input" placeholder="输入详情" />
   </view>
   <view class="operation">
     <button bindtap="onEdit">

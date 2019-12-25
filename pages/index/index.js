@@ -15,7 +15,7 @@ Page({
     duration: 500,
     itemVal: ''
   },
-  onLoad() {
+  onShow() {
     const self = this
 
     app.http({
