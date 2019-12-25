@@ -1,5 +1,7 @@
 import { apiBaseUrl } from '../../config.js'
 
+const app = getApp()
+
 Page({
   data: {
     img: [
@@ -17,11 +19,15 @@ Page({
   },
   onLoad() {
     const self = this
-    /*
-    * https
-    * http://localhost:3000
-    * */
-    wx.request({
+    app.http({
+      url: '/articles',
+      success(res) {
+        self.setData({
+          list: res.data
+        })
+      }
+    })
+    /*wx.request({
       url: `${apiBaseUrl}/articles`,
       method: 'GET',
       success(res){
@@ -30,7 +36,7 @@ Page({
         })
         // console.log(res.data)
       }
-    })
+    })*/
   },
   getVal() {
     const self = this
