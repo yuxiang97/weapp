@@ -1,5 +1,3 @@
-import { apiBaseUrl } from '../../config.js'
-
 const app = getApp()
 
 Page({
@@ -19,14 +17,25 @@ Page({
   },
   onLoad() {
     const self = this
+
     app.http({
       url: '/articles',
-      success(res) {
-        self.setData({
-          list: res.data
-        })
-      }
+    }).then((res) => {
+      self.setData({
+        list: res.data
+      })
     })
+
+    /*try {
+      const res = app.http({
+        url: '/articles',
+      })
+      self.setData({
+        list: res.data
+      })
+    } catch (e) {
+      console.log(e)
+    }*/
     /*wx.request({
       url: `${apiBaseUrl}/articles`,
       method: 'GET',

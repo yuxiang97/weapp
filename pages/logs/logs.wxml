@@ -1,16 +1,21 @@
 <view>
   <text class="title">详情页</text>
   <view class="weui-cell weui-cell_input">
-    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
+    <view wx:if="{{ !isEdit }}">{{ article.title }}</view>
+    <input wx:else value="{{article.title}}" class="weui-input" maxlength="10" placeholder="输入标题" />
   </view>
   <view class="weui-cell weui-cell_input">
-    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
+    <view wx:if="{{ !isEdit }}">{{ article.description }}</view>
+    <input wx:else value="{{article.description}}" class="weui-input" maxlength="20" placeholder="输入描述" />
   </view>
-  <view class="weui-cell weui-cell_input">
-    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
+  <view>
+    <view wx:if="{{ !isEdit }}">{{ article.detail }}</view>
+    <textarea wx:else value="{{article.detail}}" class="weui-input" placeholder="输入详情" />
   </view>
   <view class="operation">
-    <button >编辑</button>
+    <button bindtap="onEdit">
+      {{ isEdit ? '提交': '编辑' }}
+    </button>
     <button >删除</button>
   </view>
 </view>

@@ -1,22 +1,33 @@
-import {apiBaseUrl} from '../../config.js'
+const app = getApp()
 
 Page({
-  data: {},
+  data: {
+    article: {},
+    isEdit: false
+  },
   onLoad: function (e) {
     const {objectId} = e
     const self = this
-
-    wx.request({
-      url: `${apiBaseUrl}/articles/${objectId}`,
-      method: 'GET',
-      success(res){
-        self.setData({
-          list: res.data
-        })
-        console.log(res.data)
-      }
+    app.http({
+      url: `/articles/${objectId}`
+    }).then(res => {
+      self.setData({
+        article: res.data
+      })
     })
-
-    console.log(objectId)
+    // console.log(objectId)
+  },
+  onEdit() {
+    console.log('3456789')
+    if (this.data.isEdit) {
+      console.log(this.data.article)
+      /*this.setData({
+        isEdit: false
+      })*/
+    } else {
+      this.setData({
+        isEdit: true
+      })
+    }
   }
 })
