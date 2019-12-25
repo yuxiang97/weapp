@@ -3,9 +3,9 @@ const app = getApp()
 Page({
   data: {
     img: [
-    'http://b.hiphotos.baidu.com/image/h%3D300/sign=05b297ad39fa828bce239be3cd1e41cd/0eb30f2442a7d9337119f7dba74bd11372f001e0.jpg',
-    'http://img1.imgtn.bdimg.com/it/u=1734073965,524448280&fm=26&gp=0.jpg',
-    'http://attach.bbs.miui.com/forum/201111/21/205700txzuacubbcy91u99.jpg'
+    'http://img.zcool.cn/community/0104865de899d5a80120956878d1a6.jpg@2o.jpg',
+    'http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1511/12/c0/15185530_1447338507086_800x600.jpg',
+    'http://pic1.win4000.com/wallpaper/f/58cf406144416.jpg'
     ],
     list:[],
     indicatorDots: true,
