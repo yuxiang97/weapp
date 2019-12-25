@@ -14,6 +14,11 @@ Page({
     })
   },
   onLoad: function (e) {
+
+    console.log('-=====')
+    console.log(getCurrentPages())
+    console.log('-=====')
+
     const {objectId} = e
     const self = this
     self.setData({objectId})

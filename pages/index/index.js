@@ -15,6 +15,18 @@ Page({
     duration: 500,
     itemVal: ''
   },
+  previewImage(e) {
+    // console.log(e.currentTarget.dataset.src)
+    wx.previewImage({
+      urls: [e.currentTarget.dataset.src], // 当前显示图片的http链接
+      success(res) {
+        console.log(res)
+      }
+    })
+  },
+  onLoad(e) {
+    console.log(e)
+  },
   onShow() {
     const self = this
 

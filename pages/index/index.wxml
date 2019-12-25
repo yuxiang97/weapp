@@ -8,7 +8,7 @@
         >
             <block wx:for="{{img}}" wx:key="*this">
                 <swiper-item>
-                    <image src="{{item}}" class="img"></image>
+                    <image src="{{item}}" bindtap="previewImage" data-src="{{item}}" class="img"></image>
                 </swiper-item>
             </block>
         </swiper>

@@ -1,0 +1,8 @@
+/* views/index/index.wxss */
+
+.money {
+  font-size: 100rpx;
+  font-weight: bold;
+  text-align: center;
+  padding: 40rpx 0;
+}

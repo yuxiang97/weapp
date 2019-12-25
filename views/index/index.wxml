@@ -1,0 +1,16 @@
+<!--views/index/index.wxml-->
+<text>views/index/index.wxml</text>
+
+<button bindtap="reLaunch">重启</button>
+<button bindtap="linkTo">首页</button>
+<button bindtap="choose">choose</button>
+<button bindtap="saveIcon">saveIcon</button>
+<button open-type="openSetting">openSetting</button>
+
+<button bindtap="scanCode">扫码</button>
+
+<button bindtap="getLocation">获取位置</button>
+
+<view class="money">￥88.88</view>
+<button type="primary" bindtap="pay">确认支付</button>
+
