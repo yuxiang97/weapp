@@ -29,7 +29,6 @@ Page({
   },
   onShow() {
     const self = this
-
     app.http({
       url: '/articles',
     }).then((res) => {
@@ -62,12 +61,18 @@ Page({
   getVal() {
     const self = this
     if (self.data.itemVal) {
-      // console.log(this.data.itemVal)
       wx.showModal({
         title: '提示',
         content: this.data.itemVal,
         success (res) {
           if (res.confirm) {
+            app.http({
+              url: '/articles',
+              method:'POST',
+              data:{
+                title:self.data.itemVal
+              }
+            })
             self.setData({
               itemVal: ''
             })
@@ -76,7 +81,7 @@ Page({
       })
     } else {
       wx.showToast({
-        title: '不能为空！！！',
+        title: '标题不能为空！！！',
         icon: 'none',
         duration: 2000
       })

@@ -23,7 +23,7 @@
       "selectedIconPath": "pages/resources/images/home-blue.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/code/code",
         "text": "扫码",
         "iconPath": "pages/resources/images/code.png",
         "selectedIconPath": "pages/resources/images/code-blue.png"

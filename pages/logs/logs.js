@@ -14,11 +14,6 @@ Page({
     })
   },
   onLoad: function (e) {
-
-    console.log('-=====')
-    console.log(getCurrentPages())
-    console.log('-=====')
-
     const {objectId} = e
     const self = this
     self.setData({objectId})
@@ -29,12 +24,25 @@ Page({
         article: res.data
       })
     })
-    // console.log(objectId)
+  },
+  delList(){
+    const {objectId} = this.data
+    wx.showModal({
+      title: '提示',
+      content:'是否确定删除！！！',
+      success(res){
+        if (res.confirm){
+          app.http({
+            url: `/articles/${objectId}`,
+            method:'DELETE'
+          })
+        }
+      }
+    })
   },
   onEdit() {
-    console.log('3456789')
+    // console.log('3456789')
     if (this.data.isEdit) {
-      // console.log(this.data.article)
       app.http({
         url: `/articles/${this.data.objectId}`,
         method: 'PUT',
@@ -42,10 +50,6 @@ Page({
       }).then(res => {
         console.log(res)
       })
-
-      /*this.setData({
-        isEdit: false
-      })*/
     } else {
       this.setData({
         isEdit: true

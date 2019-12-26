@@ -1,2 +1,3 @@
-<!--pages/code/code.wxml-->
-<text>pages/code/code.wxml</text>
+<view>
+    <button bindtap="scanCode">扫一扫</button>
+</view>
