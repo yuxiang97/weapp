@@ -22,7 +22,7 @@
           value="{{itemVal}}"
           bindinput="onInputChange"
         />
-        <button bindtap="getVal" size="mini">点击</button>
+        <button bindtap="getVal" size="mini">创建</button>
     </view>
     <view class="Todo-list" wx:for="{{list}}" wx:key="*this">
         <navigator url="../logs/logs?objectId={{item.id}}" class="text">

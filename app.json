@@ -3,6 +3,7 @@
     "pages/index/index",
     "views/index/index",
     "pages/logs/logs",
+    "pages/createCode/index",
     "pages/code/code"
   ],
   "window": {
@@ -27,6 +28,12 @@
         "text": "扫码",
         "iconPath": "pages/resources/images/code.png",
         "selectedIconPath": "pages/resources/images/code-blue.png"
+      },
+      {
+        "pagePath": "pages/createCode/index",
+        "text": "生成二维码",
+        "iconPath": "pages/resources/images/createCode.png",
+        "selectedIconPath": "pages/resources/images/createCode-blue.png"
       }
     ]
   },
